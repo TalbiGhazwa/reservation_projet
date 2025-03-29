@@ -7,7 +7,6 @@ from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 import pymysql
 pymysql.install_as_MySQLdb
-hello bla bla blka 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins":"*"}})
 
