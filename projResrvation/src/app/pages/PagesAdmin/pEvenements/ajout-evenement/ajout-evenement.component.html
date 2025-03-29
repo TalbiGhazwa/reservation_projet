@@ -1,0 +1,74 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            
+     
+{{msg}}
+
+    <form class="mt-3" #form="ngForm" (ngSubmit)="ajoutEvenement(form)">
+        <div class="mb-3">
+            <label  class="form-label"><b>Nom evenement :</b></label>
+            <input type="text" name="nomEvenement"  class="form-control" [(ngModel)]="event.nomEvenement" required>
+
+        </div>
+
+        <div class="mb-3">
+            <label  class="form-label"><b>Date evénement :</b></label>
+            <input type="date" name="DateEvenement"  class="form-control" [(ngModel)]="event.dateEvenement" required>
+
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label"><b>Type evénement :</b></label>
+            <input type="text" name="typeEvenement"  class="form-control" [(ngModel)]="event.typeEvenement" required>
+
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label"><b>Adresse evénement :</b></label>
+            <input type="text" name="adresseEvenement"  class="form-control" [(ngModel)]="event.adresseEvenement" required>
+
+        </div>
+  
+        <div class="mb-3">
+            <label class="form-label"><b>Prix :</b></label>
+           <!-- <input type="text" name="prixEvenement"  class="form-control" [(ngModel)]="event.PrixEvenement" required>-->
+            <select type="text" name="Prix" class="form-control" [(ngModel)]="event.prixEvenement" required>
+                <option>
+                    solo
+                </option>
+                <option>
+                    deux
+                </option>
+                <option>
+                    quatre 
+                </option>
+
+               
+
+            </select>
+
+        </div>
+        <div class="mb-3">
+            <label class="form-label"><b>Categories  :</b></label>
+            <select type="text" name="categorie"  class="form-control" [(ngModel)]="event.categori"  required>
+            <option *ngFor="let c of categorie" value="{{c.nomCategori}}">
+                {{c.nomCategori}}
+    
+            </option>
+            </select>
+        </div>
+       
+        <div class="mb-3" align="end" >
+            <button type="submit" class="btn btn-primary">Ajouter</button>
+
+        </div>
+      </form>
+
+    </div>
+      <div class="col-1"></div>
+    </div>
+
+</div>
+

@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <div class="card-header mt-3 p-2">
+        <h2> Liste des clients </h2>
+      </div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+    <table class="table table-striped table-hover table-bordered mt-4"> 
+
+        <thead class="table-success">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Email</th>
+            <th>Action</th>
+            <th><button mat-stroked-button class="btn btn-success" (click)="ajoutClient()">Ajout client</button></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let C of clients; let i = index">
+            <td scope="row">{{i+1}}</td>
+            <td> {{C.nomUtilisateur}} </td>
+            <td> {{C.prenomUtilisateur}} </td>
+            <td> {{C.email}}</td>
+            <td>
+                <button class="me-2"> Modifier </button>
+                <button class="me-2"> Supprimer </button>
+                
+            </td>
+          </tr>
+          <tr *ngIf="clients.length === 0">
+            <td colspan="5"> Aucun client </td>
+
+          </tr>
+        
+          
+        </tbody>
+      </table>
+</div>

@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      <div class="card-header mt-3 p-2">
+        <h2> Liste des catégories </h2>
+      </div>
+    </div>
+    <div class="col-4"></div>
+  </div>
+
+    <table class="table table-striped table-hover table-bordered mt-5"> 
+
+        <thead class="table-success">
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">Type evénement</th>
+           
+            <th>Action</th>
+            <th>
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+Ajouter Categorie          
+    </button>
+            </th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let c of listCategory">
+            <th scope="row">{{c.id}}</th>
+            <td>{{c.nomCategori}}</td>
+            
+          
+            <td>
+                <button class="btn btn-success me-2"> modifier </button>
+                <button class="btn btn-danger me-2"> supprimer </button>
+            </td>
+          </tr>
+        
+          
+        </tbody>
+      </table>
+</div>
+
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Ajouter categorie</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <form #form ="ngForm" (ngSubmit)="ajoutCategorie(form)">
+          <label>Nom Categorie</label>
+          <input class="form-control" type="text" name="nomCat" [(ngModel)]="cat.nomCategori">
+          <button type="submit" class="btn btn-success mt-2"> Ajouter </button>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+</div>
